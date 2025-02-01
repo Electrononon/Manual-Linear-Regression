@@ -1,6 +1,5 @@
 # Linear Regression Program w/ Gradient Descent
 import numpy as np
-import random
 
 
 # Create a random set of data for the model
@@ -9,11 +8,11 @@ def getData():
     x = []
     y = []
     N = 20  # Number of Data Points
-    m = random.uniform(-2, 2)
-    b = random.uniform(0, 30)
+    m = 4 * np.random.random() - 2
+    b = 30 * np.random.random()
     for _ in range(N):
-        x_i = random.uniform(0, 20)
-        y_i = m * x_i + b - random.uniform(-1.5, 1.5)
+        x_i = 20 * np.random.random()
+        y_i = m * x_i + b - (3 * np.random.random() - 1.5)
         x.append(x_i)
         y.append(y_i)
     return [x, y], m, b
@@ -56,8 +55,8 @@ x = np.array(line[0], dtype="float32")
 y = np.array(line[1], dtype="float32")
 
 # Initial Parameters
-m = random.uniform(0, 5)  # Start with random values for m and b
-b = random.uniform(0, 5)
+m = 5 * np.random.random()  # Start with random values for m and b
+b = 5 * np.random.random()
 N = 6000  # Number of iterations
 learningRate = 0.0001
 
